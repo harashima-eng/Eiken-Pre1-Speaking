@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIKEN Pre-1 Speaking – Simple Phrase Bank</title>
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --bg-card-dark: #020617;
+            --bg-light: #f3f4f6;
+            --bg-card-light: #ffffff;
+            --text-dark: #e5e7eb;
+            --text-light: #111827;
+            --sub-dark: #9ca3af;
+            --sub-light: #4b5563;
+            --accent: #0ea5e9;
+            --border-dark: #1f2937;
+            --border-light: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .title-block h1 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .title-block p {
+            font-size: 13px;
+            color: var(--sub-dark);
+        }
+
+        .mode-btn {
+            border-radius: 999px;
+            border: 1px solid var(--border-dark);
+            padding: 6px 12px;
+            font-size: 12px;
+            background: transparent;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .category {
+            border-radius: 12px;
+            border: 1px solid var(--border-dark);
+            padding: 12px 12px 10px;
+            margin-bottom: 14px;
+            background: var(--bg-card-dark);
+        }
+
+        .category-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .category-sub {
+            font-size: 12px;
+            color: var(--sub-dark);
+            margin-bottom: 8px;
+        }
+
+        .topic {
+            border-radius: 8px;
+            border: 1px solid var(--border-dark);
+            padding: 8px 8px 6px;
+            margin-bottom: 6px;
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .topic-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .topic-tag {
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .line-label {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 4px;
+            margin-bottom: 2px;
+        }
+
+        .en {
+            font-size: 12px;
+        }
+
+        .jp {
+            font-size: 12px;
+            color: var(--sub-dark);
+        }
+
+        .note {
+            font-size: 11px;
+            color: var(--sub-dark);
+            margin-top: 4px;
+        }
+
+        .light {
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .light .category {
+            background: var(--bg-card-light);
+            border-color: var(--border-light);
+        }
+
+        .light .topic {
+            background: #f9fafb;
+            border-color: var(--border-light);
+        }
+
+        .light .title-block p,
+        .light .category-sub,
+        .light .jp,
+        .light .note {
+            color: var(--sub-light);
+        }
+
+        .light .mode-btn {
+            border-color: var(--border-light);
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .category {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <header class="header">
+        <div class="title-block">
+            <h1>EIKEN Pre-1 – Simple Speaking Phrase Bank</h1>
+            <p>1 main sentence + 1 paraphrase + Japanese translation for each high-frequency topic.</p>
+        </div>
+        <button class="mode-btn" id="modeBtn">Light mode ☀️</button>
+    </header>
+
+    <!-- 1. ENVIRONMENT -->
+    <section class="category">
+        <div class="category-title">1. Environment（環境）</div>
+        <div class="category-sub">Climate change, recycling, pollution, energy, natural disasters</div>
+
+        <div class="topic">
+            <div class="topic-title">Climate change</div>
+            <div class="topic-tag">Global warming / 気候変動</div>
+            <div class="line-label">Main</div>
+            <div class="en">More people agree we need stronger action to slow climate change.</div>
+            <div class="jp">気候変動の進行を遅らせるためには、より強い対策が必要だと考える人が増えています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Many people now believe tougher measures are necessary to fight climate change.</div>
+            <div class="jp">気候変動と戦うためには、より厳しい対策が必要だと多くの人が考えるようになっています。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Recycling</div>
+            <div class="topic-tag">Waste / リサイクル</div>
+            <div class="line-label">Main</div>
+            <div class="en">Recycling reduces waste and protects natural resources.</div>
+            <div class="jp">リサイクルはごみを減らし、自然の資源を守ることにつながります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Recycling helps cut down trash and saves important materials.</div>
+            <div class="jp">リサイクルをすることで、ごみの量を減らし、大切な資源を節約することができます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Pollution</div>
+            <div class="topic-tag">Air / Water / 汚染</div>
+            <div class="line-label">Main</div>
+            <div class="en">Pollution is getting worse and affecting people’s health.</div>
+            <div class="jp">汚染が悪化しており、人々の健康に影響を与えています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Growing pollution is starting to harm human health.</div>
+            <div class="jp">進む汚染によって、人間の健康が害され始めています。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Energy issues</div>
+            <div class="topic-tag">Renewables / エネルギー問題</div>
+            <div class="line-label">Main</div>
+            <div class="en">We should invest more in renewable energy for a cleaner future.</div>
+            <div class="jp">よりクリーンな未来のために、再生可能エネルギーへの投資を増やすべきです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Putting more money into renewable energy can create a cleaner society.</div>
+            <div class="jp">再生可能エネルギーにもっと資金を使うことで、より清潔な社会を作ることができます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Natural disasters</div>
+            <div class="topic-tag">Earthquakes / Tsunamis / 自然災害</div>
+            <div class="line-label">Main</div>
+            <div class="en">Natural disasters are increasing, so preparation is essential.</div>
+            <div class="jp">自然災害が増えているため、防災の準備は欠かせません。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">As disasters happen more often, being prepared has become necessary.</div>
+            <div class="jp">災害が以前よりも頻繁に起こるようになっているので、備えておくことが必要になっています。</div>
+        </div>
+    </section>
+
+    <!-- 2. EDUCATION -->
+    <section class="category">
+        <div class="category-title">2. Education（教育）</div>
+        <div class="category-sub">Online learning, school rules, exams, bullying, curriculum, equal access</div>
+
+        <div class="topic">
+            <div class="topic-title">Online learning</div>
+            <div class="topic-tag">Remote classes / オンライン学習</div>
+            <div class="line-label">Main</div>
+            <div class="en">Online learning is convenient but many students need more support.</div>
+            <div class="jp">オンライン学習は便利ですが、多くの生徒がより多くのサポートを必要としています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Online classes are helpful, but students often struggle without enough guidance.</div>
+            <div class="jp">オンライン授業は役に立ちますが、十分な指導がないと生徒は困ることがよくあります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">School rules</div>
+            <div class="topic-tag">Discipline / 校則</div>
+            <div class="line-label">Main</div>
+            <div class="en">School rules should protect students, not restrict them too much.</div>
+            <div class="jp">校則は生徒を守るためのものであり、必要以上に生徒をしばるべきではありません。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Rules at school should keep students safe without being overly strict.</div>
+            <div class="jp">学校のルールは生徒の安全を守るためのもので、あまりにも厳しすぎるべきではありません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Exams & testing</div>
+            <div class="topic-tag">Tests / 試験</div>
+            <div class="line-label">Main</div>
+            <div class="en">Exams are useful but don’t always show real ability.</div>
+            <div class="jp">試験は役に立ちますが、生徒の本当の実力をいつも正確に示すわけではありません。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Tests can help measure skills, but they aren’t always accurate.</div>
+            <div class="jp">試験は能力を測るのに役立ちますが、必ずしも正確とは限りません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Bullying</div>
+            <div class="topic-tag">School life / いじめ</div>
+            <div class="line-label">Main</div>
+            <div class="en">Schools need better programs to prevent bullying.</div>
+            <div class="jp">学校はいじめを防ぐために、より良い取り組みを行う必要があります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">More effective anti-bullying programs are necessary in schools.</div>
+            <div class="jp">学校には、より効果的ないじめ防止プログラムが必要です。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Curriculum</div>
+            <div class="topic-tag">Subjects / カリキュラム</div>
+            <div class="line-label">Main</div>
+            <div class="en">The curriculum should match modern society’s needs.</div>
+            <div class="jp">カリキュラムは、現代社会のニーズに合ったものであるべきです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">School programs must be updated to fit today’s required skills.</div>
+            <div class="jp">学校の教育内容は、今求められているスキルに合わせて更新されなければなりません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Equal access to education</div>
+            <div class="topic-tag">Fairness / 教育機会の平等</div>
+            <div class="line-label">Main</div>
+            <div class="en">Every child should have equal access to quality education.</div>
+            <div class="jp">すべての子どもが、質の高い教育を平等に受けられるべきです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">All children deserve the chance to receive a good education.</div>
+            <div class="jp">すべての子どもには、よい教育を受ける機会が与えられるべきです。</div>
+        </div>
+    </section>
+
+    <!-- 3. WORK & ECONOMY -->
+    <section class="category">
+        <div class="category-title">3. Work & Economy（仕事・経済）</div>
+        <div class="category-sub">Overwork, automation & AI, globalization, employment</div>
+
+        <div class="topic">
+            <div class="topic-title">Overwork & work-life balance</div>
+            <div class="topic-tag">Stress / 働きすぎ・ワークライフバランス</div>
+            <div class="line-label">Main</div>
+            <div class="en">Many workers suffer because they lack work-life balance.</div>
+            <div class="jp">ワークライフバランスが取れていないため、多くの労働者が苦しんでいます。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Without a healthy balance, workers face serious stress.</div>
+            <div class="jp">仕事と生活のバランスが悪いと、労働者は大きなストレスを抱えることになります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Automation & AI</div>
+            <div class="topic-tag">Robots / 自動化とAI</div>
+            <div class="line-label">Main</div>
+            <div class="en">AI will replace some jobs, so retraining is necessary.</div>
+            <div class="jp">AIが一部の仕事を奪う可能性があるため、再教育が必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Automation may remove some jobs, making retraining important.</div>
+            <div class="jp">自動化によって仕事が減るかもしれないので、再び学び直すことが重要になります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Globalization</div>
+            <div class="topic-tag">World trade / グローバル化</div>
+            <div class="line-label">Main</div>
+            <div class="en">Globalization connects countries but increases competition.</div>
+            <div class="jp">グローバル化は国同士をつなぎますが、同時に競争も激しくします。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">While globalization brings nations closer, it also intensifies rivalry.</div>
+            <div class="jp">グローバル化は国々の距離を縮めますが、企業や人々の競争をより厳しいものにもします。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Employment issues</div>
+            <div class="topic-tag">Jobs / 雇用問題</div>
+            <div class="line-label">Main</div>
+            <div class="en">Governments should help create stable jobs.</div>
+            <div class="jp">政府は、安定した雇用を生み出すことを支援すべきです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">The government needs to support the creation of reliable employment.</div>
+            <div class="jp">政府は、安心して働ける仕事づくりを支える必要があります。</div>
+        </div>
+    </section>
+
+    <!-- 4. TECHNOLOGY -->
+    <section class="category">
+        <div class="category-title">4. Technology（テクノロジー）</div>
+        <div class="category-sub">Smartphones, social media, AI, cybersecurity, privacy</div>
+
+        <div class="topic">
+            <div class="topic-title">Smartphones</div>
+            <div class="topic-tag">Devices / スマートフォン</div>
+            <div class="line-label">Main</div>
+            <div class="en">Smartphones are useful but overuse harms health.</div>
+            <div class="jp">スマートフォンは便利ですが、使いすぎると健康に悪影響を与えます。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Phones are helpful tools, but using them too much can be unhealthy.</div>
+            <div class="jp">スマホは役に立つ道具ですが、長時間使いすぎると体や心に良くありません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Social media</div>
+            <div class="topic-tag">SNS / ソーシャルメディア</div>
+            <div class="line-label">Main</div>
+            <div class="en">Social media spreads misinformation easily.</div>
+            <div class="jp">ソーシャルメディアでは、誤った情報が簡単に広まってしまいます。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">False information can travel quickly on social networks.</div>
+            <div class="jp">SNS上では、間違った情報がすぐに多くの人に広がってしまいます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">AI</div>
+            <div class="topic-tag">Artificial intelligence / 人工知能</div>
+            <div class="line-label">Main</div>
+            <div class="en">AI improves life but needs safety rules.</div>
+            <div class="jp">AIは私たちの生活を便利にしますが、安全に使うためのルールが必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">AI offers benefits, but guidelines are needed to ensure safe use.</div>
+            <div class="jp">AIには多くの利点がありますが、安全に利用するための指針が求められます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Cybersecurity</div>
+            <div class="topic-tag">Online safety / サイバーセキュリティ</div>
+            <div class="line-label">Main</div>
+            <div class="en">As services go online, strong cybersecurity is essential.</div>
+            <div class="jp">さまざまなサービスがオンライン化する中で、強力なサイバーセキュリティは欠かせません。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">More online services mean better digital protection is required.</div>
+            <div class="jp">オンラインサービスが増えるほど、より高いレベルのデジタルな安全対策が必要になります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Privacy</div>
+            <div class="topic-tag">Personal data / プライバシー</div>
+            <div class="line-label">Main</div>
+            <div class="en">People worry about how companies use their data.</div>
+            <div class="jp">人々は、企業が自分たちのデータをどのように利用しているのかを心配しています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">There’s growing concern about businesses handling personal information.</div>
+            <div class="jp">企業による個人情報の扱いについて、懸念が高まっています。</div>
+        </div>
+    </section>
+
+    <!-- 5. SOCIETY & CULTURE -->
+    <section class="category">
+        <div class="category-title">5. Society & Culture（社会・文化）</div>
+        <div class="category-sub">Gender issues, traditional culture, global culture, immigration</div>
+
+        <div class="topic">
+            <div class="topic-title">Gender issues</div>
+            <div class="topic-tag">Equality / ジェンダー問題</div>
+            <div class="line-label">Main</div>
+            <div class="en">Society needs fair opportunities for all genders.</div>
+            <div class="jp">社会は、すべての性別に対して公平な機会を用意する必要があります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Equal chances for every gender are necessary in modern society.</div>
+            <div class="jp">現代社会では、どの性別であっても平等なチャンスが与えられるべきです。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Traditional culture</div>
+            <div class="topic-tag">Heritage / 伝統文化</div>
+            <div class="line-label">Main</div>
+            <div class="en">We should protect traditional culture while accepting new ideas.</div>
+            <div class="jp">新しい考え方を受け入れつつも、伝統文化を守っていくべきです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">It’s important to preserve traditions even as we embrace innovation.</div>
+            <div class="jp">たとえ新しいものを取り入れても、伝統を大切に守ることが重要です。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Global culture</div>
+            <div class="topic-tag">Exchange / グローバル文化</div>
+            <div class="line-label">Main</div>
+            <div class="en">Mixed cultures help people learn from each other.</div>
+            <div class="jp">さまざまな文化が混ざり合うことで、人々はお互いから学びやすくなります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Cultural exchange makes it easier for people to understand one another.</div>
+            <div class="jp">文化交流によって、人々は互いを理解しやすくなります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Immigration</div>
+            <div class="topic-tag">Movement / 移民</div>
+            <div class="line-label">Main</div>
+            <div class="en">Immigration can solve labor shortages if managed well.</div>
+            <div class="jp">適切に受け入れを行えば、移民は労働力不足の解決につながります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Properly controlled immigration can help fill workforce gaps.</div>
+            <div class="jp">きちんと管理された移民政策は、人手不足を補う助けになります。</div>
+        </div>
+    </section>
+
+    <!-- 6. HEALTH & MEDICINE -->
+    <section class="category">
+        <div class="category-title">6. Health & Medicine（健康・医療）</div>
+        <div class="category-sub">Lifestyle diseases, mental health, aging society, medical technology</div>
+
+        <div class="topic">
+            <div class="topic-title">Lifestyle diseases</div>
+            <div class="topic-tag">Habits / 生活習慣病</div>
+            <div class="line-label">Main</div>
+            <div class="en">Healthy habits prevent lifestyle diseases.</div>
+            <div class="jp">健康的な生活習慣は、生活習慣病の予防につながります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Better daily habits can stop many lifestyle-related illnesses.</div>
+            <div class="jp">日々の生活習慣を改善することで、多くの生活習慣病を防ぐことができます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Mental health</div>
+            <div class="topic-tag">Mind / メンタルヘルス</div>
+            <div class="line-label">Main</div>
+            <div class="en">People now understand mental health is important.</div>
+            <div class="jp">今では、多くの人がメンタルヘルスの重要性を理解しています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Awareness of mental health has been growing.</div>
+            <div class="jp">メンタルヘルスに対する意識は高まりつつあります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Aging society</div>
+            <div class="topic-tag">Seniors / 高齢化社会</div>
+            <div class="line-label">Main</div>
+            <div class="en">An aging society needs more support for seniors.</div>
+            <div class="jp">高齢化社会では、高齢者への支援をもっと増やす必要があります。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">As the population ages, elderly care becomes essential.</div>
+            <div class="jp">人口が高齢化するにつれて、高齢者のケアは欠かせないものになります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Medical technology</div>
+            <div class="topic-tag">Innovation / 医療技術</div>
+            <div class="line-label">Main</div>
+            <div class="en">New medical technology saves lives but is expensive.</div>
+            <div class="jp">新しい医療技術は命を救うことができますが、費用が高くなることも多いです。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Advanced medical tools help people but often cost a lot.</div>
+            <div class="jp">高度な医療機器は人々の役に立ちますが、非常に高額な場合が少なくありません。</div>
+        </div>
+    </section>
+
+    <!-- 7. CRIME & LAW -->
+    <section class="category">
+        <div class="category-title">7. Crime & Law（犯罪・法）</div>
+        <div class="category-sub">Laws & regulations, surveillance, juvenile crime</div>
+
+        <div class="topic">
+            <div class="topic-title">Laws & regulations</div>
+            <div class="topic-tag">Rules / 法律・規制</div>
+            <div class="line-label">Main</div>
+            <div class="en">Clear laws protect people and maintain order.</div>
+            <div class="jp">分かりやすい法律は、人々を守り、社会の秩序を保つことに役立ちます。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Strong, easy-to-understand laws are necessary to keep society safe.</div>
+            <div class="jp">社会の安全を守るためには、分かりやすくてしっかりした法律が必要です。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Surveillance</div>
+            <div class="topic-tag">Cameras / 監視</div>
+            <div class="line-label">Main</div>
+            <div class="en">Surveillance improves safety but raises privacy concerns.</div>
+            <div class="jp">監視カメラなどは安全性を高めますが、プライバシーの問題も引き起こします。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Monitoring systems can increase security but threaten privacy.</div>
+            <div class="jp">監視システムは治安を良くする一方で、人々のプライバシーを脅かす可能性もあります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Juvenile crime</div>
+            <div class="topic-tag">Youth / 少年犯罪</div>
+            <div class="line-label">Main</div>
+            <div class="en">We need programs to stop young people from turning to crime.</div>
+            <div class="jp">若者が犯罪に走らないようにするためのプログラムが必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Better support is needed to prevent youth crime.</div>
+            <div class="jp">少年犯罪を防ぐためには、若者へのより良い支援が求められます。</div>
+        </div>
+    </section>
+
+    <!-- 8. INTERNATIONAL ISSUES -->
+    <section class="category">
+        <div class="category-title">8. International Issues（国際問題）</div>
+        <div class="category-sub">War & conflict, refugees, human rights, international cooperation</div>
+
+        <div class="topic">
+            <div class="topic-title">War & conflict</div>
+            <div class="topic-tag">Peace / 戦争・紛争</div>
+            <div class="line-label">Main</div>
+            <div class="en">War destroys lives, so peaceful solutions are needed.</div>
+            <div class="jp">戦争は多くの命を奪うため、平和的な解決策が必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Because war causes suffering, peaceful approaches are essential.</div>
+            <div class="jp">戦争は大きな苦しみをもたらすので、平和的なやり方が欠かせません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Refugees</div>
+            <div class="topic-tag">Protection / 難民</div>
+            <div class="line-label">Main</div>
+            <div class="en">Refugees need support to rebuild their lives.</div>
+            <div class="jp">難民の人々が生活を立て直せるよう、支援が必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">People fleeing conflict require help to start over safely.</div>
+            <div class="jp">紛争から逃れてきた人たちが、安全に新しい生活を始めるための支援が求められます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Human rights</div>
+            <div class="topic-tag">Rights / 人権</div>
+            <div class="line-label">Main</div>
+            <div class="en">Protecting human rights should be a priority.</div>
+            <div class="jp">人権を守ることは、最優先で取り組むべき課題です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Every nation must focus on defending human rights.</div>
+            <div class="jp">すべての国が、人権を守ることに力を入れなければなりません。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">International cooperation</div>
+            <div class="topic-tag">Working together / 国際協力</div>
+            <div class="line-label">Main</div>
+            <div class="en">Cooperation is essential to solve global problems.</div>
+            <div class="jp">世界的な問題を解決するためには、国同士の協力が欠かせません。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Countries must work together to handle worldwide issues.</div>
+            <div class="jp">各国が協力して行動しなければ、地球規模の問題には対応できません。</div>
+        </div>
+    </section>
+
+    <!-- 9. MEDIA & COMMUNICATION -->
+    <section class="category">
+        <div class="category-title">9. Media & Communication（メディア）</div>
+        <div class="category-sub">Fake news, advertising, mass media influence</div>
+
+        <div class="topic">
+            <div class="topic-title">Fake news</div>
+            <div class="topic-tag">Misinformation / フェイクニュース</div>
+            <div class="line-label">Main</div>
+            <div class="en">Fake news spreads quickly, so media literacy is needed.</div>
+            <div class="jp">フェイクニュースはすぐに広がってしまうため、メディアリテラシーが必要です。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Because false news travels fast, people need better critical thinking.</div>
+            <div class="jp">誤ったニュースはあっという間に広がるので、人々には情報を見抜く力が求められます。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Advertising</div>
+            <div class="topic-tag">Commercials / 広告</div>
+            <div class="line-label">Main</div>
+            <div class="en">Advertising influences people more than they realize.</div>
+            <div class="jp">広告は、人々が気づいている以上に行動や考え方に影響を与えています。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">Ads often affect our decisions without us noticing.</div>
+            <div class="jp">私たちは自覚していなくても、広告によって選択が左右されることがよくあります。</div>
+        </div>
+
+        <div class="topic">
+            <div class="topic-title">Mass media influence</div>
+            <div class="topic-tag">TV / News / マスメディアの影響</div>
+            <div class="line-label">Main</div>
+            <div class="en">Mass media strongly shapes public opinion.</div>
+            <div class="jp">マスメディアは、人々の意見や考え方に大きな影響を与えます。</div>
+            <div class="line-label">Paraphrase</div>
+            <div class="en">The media has huge power over how society thinks.</div>
+            <div class="jp">メディアは、社会全体がどのように物事を考えるかに強い影響力を持っています。</div>
+        </div>
+    </section>
+</div>
+
+<script>
+    const btn = document.getElementById("modeBtn");
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+        if (document.body.classList.contains("light")) {
+            btn.textContent = "Dark mode 🌙";
+        } else {
+            btn.textContent = "Light mode ☀️";
+        }
+    });
+</script>
+</body>
+</html>
