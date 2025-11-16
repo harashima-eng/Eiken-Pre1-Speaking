@@ -189,6 +189,35 @@
             font-weight: 600;
             color: #495057;
         }
+
+        .final-part {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 2px solid #f5576c;
+        }
+
+        .final-part .badge {
+            background: #f5576c;
+        }
+
+        .final-part .title,
+        .final-part .topic {
+            color: white;
+        }
+
+        .final-part .tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .final-part::after {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .final-part:hover::after {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -199,7 +228,7 @@
             <div class="subtitle">EIKEN PRE-1 SPEAKING</div>
             <h1>英検準1級 スピーキング対策ポータル</h1>
             <p class="lead">
-                Part 1〜5 の <span>練習用ページ</span> です。生徒にはリンクを1つだけ共有し、
+                Part 1〜7 の <span>練習用ページ</span> です。生徒にはリンクを1つだけ共有し、
                 各自の弱点分野から選んで学習させることができます。
             </p>
         </header>
@@ -275,7 +304,7 @@
                 </article>
             </a>
 
-            <!-- ✅ NEW: PART 6 — SIMPLE PHRASE BANK -->
+            <!-- PART 6 -->
             <a class="link-wrap" href="eiken_pre1_speaking_phrase_bank_simple.html">
                 <article class="item">
                     <div class="badge">PART 6</div>
@@ -289,10 +318,24 @@
                 </article>
             </a>
 
+            <!-- PART 7 - FINAL COMPREHENSIVE REVIEW -->
+            <a class="link-wrap" href="eiken_pre1_part7_FINAL.html">
+                <article class="item final-part">
+                    <div class="badge">PART 7 - FINAL</div>
+                    <div class="title">総合復習 - 賛成・反対両論</div>
+                    <p class="topic">全テーマのベスト問題に「Yes・No両方のヒント」を完備。試験直前の最終確認に最適。</p>
+                    <div class="tags">
+                        <span class="tag">comprehensive</span>
+                        <span class="tag">both sides</span>
+                        <span class="tag">final review</span>
+                    </div>
+                </article>
+            </a>
+
         </section>
 
         <div class="footer">
-            Teacher: <span>Harashima</span>｜英検準1級 スピーキング対策
+            Teacher: <span>Harashima</span>│英検準1級 スピーキング対策
         </div>
     </div>
 </div>
