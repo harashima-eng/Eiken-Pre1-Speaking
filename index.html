@@ -218,6 +218,46 @@
         .final-part:hover::after {
             color: white;
         }
+
+        /* Support Section Styles */
+        .support-section {
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 2px solid #edf2ff;
+        }
+
+        .support-title {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 720px) {
+            .support-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .support-item {
+            border: 2px dashed #bac8ff;
+            background: #f8f9fa;
+        }
+
+        .support-item:hover {
+            background: white;
+            border-color: #667eea;
+        }
+
+        .support-badge {
+            background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        }
     </style>
 </head>
 <body>
@@ -332,6 +372,48 @@
                 </article>
             </a>
 
+        </section>
+
+        <!-- SUPPORT / ADDITIONAL RESOURCES SECTION -->
+        <section class="support-section">
+            <h2 class="support-title">📚 補助教材 / Additional Resources</h2>
+            <div class="support-grid">
+
+                <!-- Universal Phrases -->
+                <a class="link-wrap" href="eiken_pre1_universal_phrases.html">
+                    <article class="item support-item">
+                        <div class="badge support-badge">SUPPORT</div>
+                        <div class="title">万能フレーズ集</div>
+                        <p class="topic">どんな質問にも使える汎用性の高いフレーズをまとめた便利帳。</p>
+                        <div class="tags">
+                            <span class="tag">universal</span>
+                            <span class="tag">all topics</span>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- 
+                ========================================
+                ADD MORE SUPPORT MATERIALS BELOW
+                ========================================
+                Copy and paste this template, then edit:
+
+                <a class="link-wrap" href="YOUR_FILE_NAME.html">
+                    <article class="item support-item">
+                        <div class="badge support-badge">SUPPORT</div>
+                        <div class="title">Your Title Here</div>
+                        <p class="topic">Your description here.</p>
+                        <div class="tags">
+                            <span class="tag">tag1</span>
+                            <span class="tag">tag2</span>
+                        </div>
+                    </article>
+                </a>
+                
+                ========================================
+                -->
+
+            </div>
         </section>
 
         <div class="footer">
