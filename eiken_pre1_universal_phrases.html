@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 EIKEN Pre-1 Universal Mega-Phrases - 50 Versatile Phrases</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .container {
+            background: #0f3460;
+            color: #e8e8e8;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        body.dark-mode .header {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            font-size: 1.5em;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .info-box {
+            background: linear-gradient(135deg, #3d3d00 0%, #6b5b00 100%);
+            border-left-color: #ffd93d;
+        }
+
+        .info-box h3 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        body.dark-mode .info-box h3 {
+            color: #ffd93d;
+        }
+
+        .category {
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6b3fa0 100%);
+        }
+
+        body.dark-mode .category-header {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+        }
+
+        body.dark-mode .category-header:hover {
+            background: linear-gradient(135deg, #1c2a4a 0%, #252540 100%);
+        }
+
+        .category-header h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .category-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .category-header.active .category-toggle {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f8f9fa;
+        }
+
+        body.dark-mode .category-content {
+            background: #1a2332;
+        }
+
+        .category-content.active {
+            max-height: 10000px;
+        }
+
+        .phrase-card {
+            background: white;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        body.dark-mode .phrase-card {
+            background: #0f3460;
+            border-left-color: #667eea;
+        }
+
+        .phrase-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .original-phrase {
+            font-size: 1.1em;
+            color: #2d3436;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f1f3f5;
+            border-radius: 10px;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .original-phrase {
+            background: #1a2332;
+            color: #e8e8e8;
+        }
+
+        .easier-phrase {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #00bcd4;
+        }
+
+        body.dark-mode .easier-phrase {
+            background: linear-gradient(135deg, #004d5c 0%, #006978 100%);
+            border-left-color: #00bcd4;
+        }
+
+        .easier-phrase strong {
+            color: #00838f;
+        }
+
+        body.dark-mode .easier-phrase strong {
+            color: #4dd0e1;
+        }
+
+        .japanese-translation {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe0b2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ff9800;
+            font-size: 0.95em;
+        }
+
+        body.dark-mode .japanese-translation {
+            background: linear-gradient(135d, #4d3800 0%, #6b5100 100%);
+            border-left-color: #ffa726;
+        }
+
+        .japanese-translation strong {
+            color: #e65100;
+        }
+
+        body.dark-mode .japanese-translation strong {
+            color: #ffb74d;
+        }
+
+        .stats-bar {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        body.dark-mode .stats-bar {
+            background: linear-gradient(135deg, #2d3561 0%, #1e2749 100%);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .phrase-card {
+                margin: 15px;
+                padding: 20px;
+            }
+
+            .category-header h2 {
+                font-size: 1.2em;
+            }
+
+            .dark-mode-toggle {
+                top: 10px;
+                right: 10px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+            }
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        body.dark-mode .legend {
+            background: #1a2332;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-icon {
+            font-size: 1.2em;
+        }
+
+        .open-all-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .open-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    <button class="back-to-top" onclick="scrollToTop()">⬆️ Top</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>🔥 EIKEN Pre-1 Universal Mega-Phrases</h1>
+            <p>50 Versatile Phrases That Work for ANY Topic | どんなトピックにも使える万能フレーズ50選</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">50</span>
+                <span class="stat-label">Total Phrases</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10</span>
+                <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Versatile</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="info-box">
+                <h3>🎯 How to Use This Resource</h3>
+                <p><strong>💡 Each phrase includes:</strong></p>
+                <ul>
+                    <li>✅ <strong>Original phrase</strong> - The full, natural English expression</li>
+                    <li>💡 <strong>Easier version</strong> - A simpler way to say the same thing</li>
+                    <li>🇯🇵 <strong>Japanese translation</strong> - Complete understanding in your native language</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>📌 Pro Tip:</strong> Learn the easier versions first, then upgrade to the original phrases as you get more confident!</p>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-icon">📝</span>
+                    <span>Original Phrase</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">💡</span>
+                    <span>Easier Version</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">🇯🇵</span>
+                    <span>Japanese Translation</span>
+                </div>
+            </div>
+
+            <button class="open-all-btn" onclick="toggleAllCategories()">📂 Open All Categories</button>
+
+            <!-- CATEGORY 1: ECONOMIC IMPACT -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>💰 CATEGORY 1: Economic Impact Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It can help create job opportunities, and it will boost the economy. This means more people will have stable incomes and better living standards."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can make more jobs and help the economy grow. More people will earn money and live better."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            雇用機会を創出し、経済を活性化させることができます。これは、より多くの人々が安定した収入とより良い生活水準を持つことを意味します。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could stimulate economic growth in various industries. As a result, businesses would expand and invest more in innovation."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can help many different businesses grow. Companies will get bigger and spend money on new ideas."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            さまざまな産業で経済成長を刺激する可能性があります。その結果、企業は拡大し、イノベーションにより多く投資するでしょう。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would generate revenue that could be reinvested in public services. For example, this money could improve healthcare, education, and infrastructure."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This will make money that can be used for public services. We can use it to make hospitals, schools, and roads better."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            公共サービスに再投資できる収入を生み出すでしょう。例えば、このお金は医療、教育、インフラを改善することができます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This might reduce financial burden on both individuals and the government. People would have more disposable income to spend on other necessities."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can reduce money problems for people and the government. People will have more money to buy things they need."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            個人と政府の両方の経済的負担を軽減する可能性があります。人々は他の必需品に使える可処分所得が増えるでしょう。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It could attract foreign investment and strengthen our economic position. This would make our country more competitive in the global market."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can bring money from other countries and make our economy stronger. Our country will compete better with other nations."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            外国からの投資を呼び込み、経済的地位を強化することができます。これにより、我が国は世界市場でより競争力を持つようになるでしょう。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: SOCIAL BENEFIT -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🤝 CATEGORY 2: Social Benefit Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This would improve the overall quality of life for many people. They would have better access to essential services and opportunities."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This will make life better for many people. They can use important services and get more chances more easily."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            多くの人々の生活の質全体を向上させるでしょう。彼らは必要不可欠なサービスや機会へのより良いアクセスを持つことになります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It could help reduce social inequality and create a fairer society. Everyone would have equal chances to succeed regardless of their background."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can make society more equal and fair. Everyone will have the same chances to succeed, no matter who they are."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            社会的不平等を減らし、より公平な社会を作るのに役立つ可能性があります。背景に関係なく、誰もが成功する平等なチャンスを持つことになります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This might strengthen community bonds and promote social cohesion. People would feel more connected to their neighbors and local area."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can help people in communities become closer. People will feel more connected to their neighbors."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            コミュニティの絆を強化し、社会的結束を促進する可能性があります。人々は近隣住民や地域社会とより強いつながりを感じるでしょう。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would give people more opportunities to participate in society. This leads to a more engaged and active citizenship."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This gives people more chances to join in society. People will become more active and involved citizens."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            人々に社会参加のより多くの機会を与えるでしょう。これはより積極的で活動的な市民権につながります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could help build a more inclusive and diverse society. Different perspectives and backgrounds would be valued and respected."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can create a society that includes everyone. People will respect different ideas and backgrounds."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            より包括的で多様な社会の構築に役立つ可能性があります。異なる視点や背景が評価され、尊重されるでしょう。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: LONG-TERM THINKING -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🔮 CATEGORY 3: Long-Term Thinking Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "In the long run, this would benefit future generations. Our children and grandchildren would inherit a better world."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "In the future, this will help our children and grandchildren. They will live in a better world."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            長期的には、将来の世代に利益をもたらすでしょう。私たちの子供や孫はより良い世界を受け継ぐことになります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This is a sustainable approach that considers long-term consequences. It ensures we don't create bigger problems for the future."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This is a way that thinks about the future. It makes sure we don't cause bigger problems later."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは長期的な結果を考慮した持続可能なアプローチです。将来のためにより大きな問題を作らないことを保証します。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would help us prepare for challenges we might face in the future. Being proactive now saves us from crisis management later."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This helps us get ready for future problems. If we act now, we won't have bigger problems later."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            将来直面する可能性のある課題への準備に役立つでしょう。今積極的に行動することで、後の危機管理を避けることができます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This takes into account not just immediate needs but long-term stability. Short-term sacrifices can lead to lasting benefits."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This thinks about what we need now and in the future. If we give up something small now, we get bigger benefits later."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは目先のニーズだけでなく、長期的な安定性も考慮しています。短期的な犠牲は永続的な利益につながる可能性があります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "Looking ahead, this could prevent more serious problems down the road. Prevention is always better than trying to fix things after they break."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "In the future, this can stop big problems from happening. It's better to prevent problems than to fix them later."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            先を見据えると、将来的により深刻な問題を防ぐことができるでしょう。予防は常に、壊れた後に修理しようとするよりも優れています。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 4: PROBLEM-SOLUTION -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🔧 CATEGORY 4: Problem-Solution Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This addresses the root cause of the problem, not just the symptoms. By fixing the underlying issue, we create lasting solutions."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This fixes the real problem, not just what we can see. When we fix the real cause, the solution lasts longer."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは症状だけでなく、問題の根本原因に対処します。根底にある問題を修正することで、永続的な解決策を生み出します。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It provides a practical solution that can be implemented relatively quickly. We don't need years of planning to see positive results."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This is a realistic solution we can use quickly. We can see good results without waiting for years."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            比較的迅速に実施できる実用的な解決策を提供します。肯定的な結果を見るために何年もの計画は必要ありません。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could help prevent the situation from getting worse. Taking action now stops small problems from becoming major crises."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can stop things from getting worse. If we do something now, small problems won't become big ones."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            状況の悪化を防ぐのに役立つ可能性があります。今行動を起こすことで、小さな問題が大きな危機になるのを防ぎます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It tackles multiple issues at once, making it cost-effective. This comprehensive approach gives us more value for our investment."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This solves many problems at the same time and saves money. We get more benefits for what we spend."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            複数の問題に同時に取り組むため、費用対効果が高いです。この包括的なアプローチは、投資に対してより多くの価値を提供します。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This offers a balanced approach that considers different perspectives. By including various viewpoints, we reach better decisions."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This considers different opinions and ideas. When we listen to many views, we make better choices."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            さまざまな視点を考慮したバランスの取れたアプローチを提供します。さまざまな視点を含めることで、より良い決定に達します。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 5: CAUSE-EFFECT -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🔄 CATEGORY 5: Cause-Effect Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could have a ripple effect that benefits multiple sectors. When one area improves, it positively impacts related industries."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can create a chain reaction that helps many areas. When one thing gets better, other connected things improve too."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは複数の分野に利益をもたらす波及効果を持つ可能性があります。ある分野が改善すると、関連産業にも良い影響を与えます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would create a positive cycle that reinforces itself over time. Success in one area leads to success in others automatically."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This creates a good pattern that keeps getting better. When one thing succeeds, it helps other things succeed too."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            時間とともに自己強化する好循環を生み出すでしょう。ある分野での成功が自動的に他の分野での成功につながります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "The consequences of not doing this could be far more serious. Ignoring the problem now will only make it harder to solve later."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "Not doing this could cause much bigger problems. If we ignore it now, it will be harder to fix later."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これをしないことの結果は、はるかに深刻になる可能性があります。今問題を無視すると、後で解決するのがより難しくなるだけです。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could trigger significant changes in how people think and behave. Shifting mindsets is essential for real progress."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can change the way people think and act. Changing how people think is important for real improvement."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは人々の考え方や行動に大きな変化を引き起こす可能性があります。考え方を変えることは、真の進歩に不可欠です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would set a precedent that encourages similar positive actions. When others see success, they're motivated to follow the example."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This sets a good example that encourages others to do the same. When people see it works, they want to copy it."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            同様の前向きな行動を促す前例を作るでしょう。他の人が成功を見ると、その例に従う動機付けになります。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 6: GLOBAL PERSPECTIVE -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🌍 CATEGORY 6: Global Perspective Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This aligns with international standards and best practices. Following proven methods helps us avoid costly mistakes."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This follows what other countries do successfully. Using methods that work helps us avoid expensive mistakes."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは国際標準とベストプラクティスに沿っています。実証済みの方法に従うことで、高くつく間違いを避けることができます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would help Japan keep pace with other developed nations. Staying competitive globally is crucial for our future prosperity."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This helps Japan stay equal with other advanced countries. Competing with the world is important for our future success."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            日本が他の先進国に遅れを取らないようにするのに役立つでしょう。グローバルに競争力を維持することは、将来の繁栄にとって極めて重要です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This addresses a challenge that many countries are facing globally. By learning from others' experiences, we can find better solutions."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This deals with a problem many countries have. We can learn from what other countries did and find better answers."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは多くの国が世界的に直面している課題に対処します。他国の経験から学ぶことで、より良い解決策を見つけることができます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It could position Japan as a leader in this area on the world stage. Taking initiative now builds our international reputation."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can make Japan a leader in this field worldwide. If we act first, other countries will respect us more."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            日本をこの分野における世界的リーダーとして位置づける可能性があります。今イニシアチブを取ることで、国際的な評判を築きます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This reflects the values of modern democratic societies. Respecting human rights and freedoms is fundamental to progress."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This shows the ideas that modern free societies believe in. Respecting people's rights and freedoms is basic for improvement."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは現代の民主主義社会の価値観を反映しています。人権と自由を尊重することは、進歩の基本です。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 7: EVIDENCE & LOGIC -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>📊 CATEGORY 7: Evidence & Logic Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "Studies have shown that this approach tends to be effective. Research data supports making this kind of change."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "Research proves this method usually works. Scientific information says this change is good."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            研究によると、このアプローチは効果的である傾向があります。研究データは、この種の変化を行うことを支持しています。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "There's compelling evidence that supports this direction. Multiple sources confirm this is the right path forward."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "There's strong proof that this is the right way. Many sources agree this is what we should do."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            この方向性を支持する説得力のある証拠があります。複数の情報源が、これが正しい進むべき道であることを確認しています。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "History has demonstrated that this kind of measure works. We can learn valuable lessons from past successes."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "History shows this kind of action works. We can learn important things from what worked before."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            歴史は、この種の対策が効果的であることを示しています。過去の成功から貴重な教訓を学ぶことができます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "The data clearly indicates that this is a step in the right direction. Numbers don't lie about what works and what doesn't."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "The facts clearly show this is a good step. Statistics tell us the truth about what's effective."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            データは、これが正しい方向への一歩であることを明確に示しています。数字は、何が機能し、何が機能しないかについて嘘をつきません。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "Experts generally agree that this is a sound strategy. Professional consensus gives us confidence in this approach."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "Most experts think this is a good plan. When professionals agree, we can trust this method."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            専門家は一般的に、これが健全な戦略であることに同意しています。専門家のコンセンサスは、このアプローチに対する自信を与えてくれます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 8: RISK & SAFETY -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>🛡️ CATEGORY 8: Risk & Safety Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This would reduce risks and make things safer for everyone involved. Protecting people's wellbeing should always be a top priority."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This makes things less dangerous and safer for everyone. Keeping people safe should be most important."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これはリスクを減らし、関係者全員にとってより安全にするでしょう。人々の幸福を守ることは常に最優先事項であるべきです。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It provides a safety net that protects vulnerable populations. The most disadvantaged members of society need extra support."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This protects weak or poor people. People who have difficult lives need more help."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            脆弱な人々を保護するセーフティネットを提供します。社会で最も不利な立場にあるメンバーは追加のサポートを必要としています。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This helps minimize potential harm and negative consequences. Prevention strategies are more humane than dealing with damage after it occurs."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This reduces possible damage and bad results. Preventing problems is kinder than fixing them after they happen."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            潜在的な害と悪影響を最小限に抑えるのに役立ちます。予防戦略は、被害が発生した後に対処するよりも人道的です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It creates safeguards that prevent abuse of the system. Clear rules and oversight keep things fair and accountable."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This creates protection against people cheating the system. Clear rules and watching carefully keeps things fair."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            システムの悪用を防ぐ保護措置を作ります。明確なルールと監視により、物事が公平で説明責任のあるものになります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This balances individual freedom with collective security. We need to protect rights while ensuring public safety."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This finds a good middle point between personal freedom and group safety. We need to protect both individual rights and everyone's safety."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            個人の自由と集団の安全のバランスを取ります。公共の安全を確保しながら権利を保護する必要があります。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 9: EDUCATION & DEVELOPMENT -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>📚 CATEGORY 9: Education & Development Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This would help develop critical skills that people need in modern society. Adapting to changing demands is essential for success."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This helps people learn important skills for today's world. Being able to change with new situations is necessary to succeed."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            現代社会で人々が必要とする重要なスキルの開発に役立つでしょう。変化する需要に適応することは成功に不可欠です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It promotes lifelong learning and continuous improvement. In today's world, we must keep updating our knowledge and abilities."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This encourages learning throughout your whole life. In our modern world, we need to keep learning new things."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            生涯学習と継続的な改善を促進します。今日の世界では、知識と能力を更新し続けなければなりません。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This could raise awareness about important issues. When people understand problems better, they can contribute to solutions."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This can help people learn about important problems. When people understand issues better, they can help solve them."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            重要な問題についての認識を高める可能性があります。人々が問題をよりよく理解すると、解決策に貢献できます。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It would help people make more informed decisions. Access to good information leads to better choices."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This helps people make better choices with more knowledge. Having good information helps us decide wisely."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            人々がより多くの情報に基づいた決定をするのに役立つでしょう。良い情報へのアクセスは、より良い選択につながります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This encourages personal growth and self-improvement. Developing ourselves benefits not just us but society as a whole."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This motivates people to grow and become better. When we improve ourselves, it helps us and everyone around us."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            個人の成長と自己改善を促します。自分自身を成長させることは、自分だけでなく社会全体に利益をもたらします。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 10: EFFICIENCY & PRACTICALITY -->
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>⚡ CATEGORY 10: Efficiency & Practicality Phrases (5 Phrases)</h2>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This is a cost-effective solution that maximizes limited resources. Getting the most value from our investments makes sense."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This solution saves money and uses what we have wisely. Getting the best results from what we spend is smart."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            これは限られた資源を最大限に活用する費用対効果の高い解決策です。投資から最大の価値を得ることは理にかなっています。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It streamlines processes and reduces unnecessary complexity. Simpler systems are easier to manage and maintain."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This makes things simpler and less complicated. Simple systems are easier to use and take care of."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            プロセスを合理化し、不必要な複雑さを減らします。よりシンプルなシステムは管理と維持が容易です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This makes better use of existing infrastructure. Building on what we already have is smarter than starting from scratch."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This uses what we already have more effectively. It's smarter to improve what exists than to build everything new."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            既存のインフラをより有効に活用します。ゼロから始めるよりも、すでに持っているものを基にする方が賢明です。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "It's a pragmatic approach that acknowledges real-world constraints. We must work within our limitations while aiming for improvement."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This is a realistic method that understands our limits. We need to work with what we can actually do while trying to improve."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            現実世界の制約を認識した実用的なアプローチです。改善を目指しながら、制限内で作業する必要があります。
+                        </div>
+                    </div>
+
+                    <div class="phrase-card">
+                        <div class="original-phrase">
+                            📝 "This saves time and energy that can be used more productively. Efficiency frees up resources for other important tasks."
+                        </div>
+                        <div class="easier-phrase">
+                            <strong>💡 Easier way to say it:</strong><br>
+                            "This saves time and effort that we can use for other things. Being efficient gives us more resources for other important work."
+                        </div>
+                        <div class="japanese-translation">
+                            <strong>🇯🇵 日本語:</strong><br>
+                            より生産的に使える時間とエネルギーを節約します。効率性により、他の重要なタスクのためのリソースが解放されます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stats-bar" style="margin-top: 40px;">
+            <div class="stat-item">
+                <span class="stat-label">🎯 Master These Phrases</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">💪 Boost Your Speaking Confidence</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">🔥 Ace Your EIKEN Pre-1!</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle category visibility
+        function toggleCategory(header) {
+            const content = header.nextElementSibling;
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Toggle all categories at once
+        let allOpen = false;
+        function toggleAllCategories() {
+            const headers = document.querySelectorAll('.category-header');
+            const contents = document.querySelectorAll('.category-content');
+            const btn = event.target;
+            
+            allOpen = !allOpen;
+            
+            headers.forEach(header => {
+                if (allOpen) {
+                    header.classList.add('active');
+                } else {
+                    header.classList.remove('active');
+                }
+            });
+            
+            contents.forEach(content => {
+                if (allOpen) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+            
+            btn.textContent = allOpen ? '📁 Close All Categories' : '📂 Open All Categories';
+        }
+
+        // Dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.dark-mode-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            
+            // Save preference
+            localStorage.setItem('eiken-phrases-darkMode', 
+                document.body.classList.contains('dark-mode'));
+        }
+
+        // Load dark mode preference
+        function loadDarkMode() {
+            const darkMode = localStorage.getItem('eiken-phrases-darkMode') === 'true';
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-mode-toggle').textContent = '☀️';
+            }
+        }
+
+        // Back to top button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button based on scroll
+        window.addEventListener('scroll', function() {
+            const btn = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            loadDarkMode();
+        });
+    </script>
+</body>
+</html>
